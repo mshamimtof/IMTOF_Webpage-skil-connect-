@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Skill Connect - Student Registration</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- HEADER (same structure you shared) -->
+  <div class="topbar">
+  <div class="navwrap">
+    <div class="toplogo">
+      <div class="brand">
+        <img src="images/imtof2026.png" class="logo-imtof" alt="IMTOF 2026">
+      </div>
+      <div class="brand">
+        <img src="images/date.png" class="logo-date" alt="Dates">
+      </div>
+      <div class="brand">
+        <img src="images/ippex2026.png" class="logo-ippex" alt="IPPEX 2026">
+      </div>
+    </div>
+
+    <!-- ✅ NEW: Mobile menu button -->
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- ✅ Add id="siteNav" -->
+    <div class="nav" id="siteNav">
+      <a href="#">About Exhibition</a>
+      <a href="#">Visitor</a>
+      <a href="#">Contact</a>
+      <a href="#">Home</a>
+      <a href="#">Exhibitor</a>
+      <a class="loginbtn" href="#">Login</a>
+    </div>
+  </div>
+</div>
+  <!-- HERO / BANNER (keep your existing banner image if you have one) -->
+  <section class="hero">
+      <div class="hero-banner">
+        <!-- Replace with your banner image if needed -->
+        <img src="images/collegenotice.png" alt="Skill Connect" />
+      </div>
+  </section>
+   <div class="hero-title">
+        <div class="hero-sub">Student Registration</div>
+        <div class="hero-main">SKILL CONNECT – Student Registration Form</div>
+      </div>
+
+  <!-- FORM -->
+  <div class="container">
+    <div class="form-shell">
+      <div class="form-body">
+        <form action="#" method="post">
+
+          <!-- BASIC DETAILS -->
+          <div class="section">
+            <h3>Student Registration Form</h3>
+            <p class="note">
+              Please fill in the details below accurately. This information will be used for communication and opportunities relevant to you.
+            </p>
+
+            <div class="grid2">
+              <div class="field">
+                <label>Full Name <span class="req">*</span><span class="sub">As per Aadhar</span></label>
+                <input type="text" name="full_name" required />
+              </div>
+
+              <div class="field">
+                <label>Father’s Name <span class="req">*</span></label>
+                <input type="text" name="father_name" required />
+              </div>
+
+              <div class="field">
+                <label>Date of Birth <span class="req">*</span></label>
+                <input type="date" name="dob" required />
+              </div>
+
+              <div class="field">
+                <label>Age <span class="req">*</span><span class="sub">Enter age in numbers</span></label>
+                <input type="number" name="age" min="1" required />
+              </div>
+
+              <div class="field">
+                <label>Contact Number <span class="req">*</span><span class="sub">Enter your contact number with country code</span></label>
+                <input type="tel" name="contact" required />
+              </div>
+
+              <div class="field">
+                <label>Email Address <span class="req">*</span></label>
+                <input type="email" name="email" required />
+              </div>
+
+              <div class="field">
+                <label>Aadhar Number <span class="req">*</span></label>
+                <input type="text" name="aadhar" required />
+              </div>
+
+              <div class="field">
+                <label>City <span class="req">*</span></label>
+                <input type="text" name="city" required />
+              </div>
+            </div>
+          </div>
+
+          <!-- LEVEL OF EDUCATION -->
+          <div class="section">
+            <h3>Current Level of Education <span class="req">*</span></h3>
+
+            <div class="radio-list" id="educationLevel">
+              <label class="radio-item">
+                <input type="radio" name="education_level" value="school" required>
+                School
+              </label>
+
+              <label class="radio-item">
+                <input type="radio" name="education_level" value="diploma">
+                Diploma
+              </label>
+
+              <label class="radio-item">
+                <input type="radio" name="education_level" value="bachelors">
+                Bachelor's Degree
+              </label>
+
+              <label class="radio-item">
+                <input type="radio" name="education_level" value="masters">
+                Master's Degree
+              </label>
+
+              <label class="radio-item">
+                <input type="radio" name="education_level" value="phd">
+                PhD
+              </label>
+
+              <label class="radio-item">
+                <input type="radio" name="education_level" value="others">
+                Others
+              </label>
+            </div>
+          </div>
+
+          <!-- SCHOOL DETAILS (shows when School selected) -->
+          <div class="section" id="schoolSection" hidden>
+            <h3>School Details</h3>
+
+            <div class="grid2">
+              <div class="field">
+                <label>School Name <span class="req">*</span></label>
+                <input type="text" name="school_name" />
+              </div>
+
+              <div class="field">
+                <label>City <span class="req">*</span></label>
+                <input type="text" name="school_city" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label>School Type <span class="req">*</span></label>
+              <div class="radio-inline">
+                <label class="radio-item">
+                  <input type="radio" name="school_type" value="government">
+                  Government
+                </label>
+                <label class="radio-item">
+                  <input type="radio" name="school_type" value="private">
+                  Private
+                </label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Board of Education <span class="req">*</span></label>
+              <input type="text" name="board_of_education" />
+            </div>
+          </div>
+
+          <!-- EDUCATION DETAILS (shows when Diploma OR Others selected) -->
+          <div class="section" id="educationSection" hidden>
+            <h3>Education Details</h3>
+
+            <div class="grid2">
+              <div class="field">
+                <label>Name of the Institution <span class="req">*</span></label>
+                <input type="text" name="edu_institution" />
+              </div>
+
+              <div class="field">
+                <label>Course currently pursuing <span class="req">*</span></label>
+                <input type="text" name="edu_course" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Job Role Interested In <span class="req">*</span></label>
+              <div class="check-list">
+                <label class="check-item"><input type="checkbox" name="job_role[]" value="Production / Manufacturing"> Production / Manufacturing</label>
+                <label class="check-item"><input type="checkbox" name="job_role[]" value="Design / R&D"> Design / R&amp;D</label>
+                <label class="check-item"><input type="checkbox" name="job_role[]" value="Sales / Marketing / Business Development"> Sales / Marketing / Business Development</label>
+                <label class="check-item"><input type="checkbox" name="job_role[]" value="Quality / Inspection"> Quality / Inspection</label>
+                <label class="check-item"><input type="checkbox" name="job_role[]" value="Automation / CNC / Robotics"> Automation / CNC / Robotics</label>
+                <label class="check-item"><input type="checkbox" name="job_role[]" value="Software / IT / Data"> Software / IT / Data</label>
+                <label class="check-item"><input type="checkbox" name="job_role[]" value="Maintenance / Service"> Maintenance / Service</label>
+                <label class="check-item"><input type="checkbox" name="job_role[]" value="Accounts / HR / Administration"> Accounts / HR / Administration</label>
+
+                <div class="check-item other-line">
+                  <label class="check-item" style="margin:0;">
+                    <input type="checkbox" id="jobOtherChk">
+                    Other:
+                  </label>
+                  <input type="text" name="job_role_other" id="jobOtherInput" placeholder="" disabled />
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Remarks/ Expectations</label>
+              <textarea name="edu_remarks"></textarea>
+            </div>
+          </div>
+
+          <!-- COLLEGE DETAILS (shows when Bachelors / Masters / PhD selected) -->
+          <div class="section" id="collegeSection" hidden>
+            <h3>College Details</h3>
+
+            <div class="grid2">
+              <div class="field">
+                <label>College Name <span class="req">*</span></label>
+                <input type="text" name="college_name" />
+              </div>
+
+              <div class="field">
+                <label>Course &amp; Specialization <span class="req">*</span></label>
+                <input type="text" name="college_course_specialization" />
+              </div>
+
+              <div class="field">
+                <label>Affiliated University <span class="req">*</span></label>
+                <input type="text" name="college_university" />
+              </div>
+
+              <div class="field">
+                <label>Department <span class="req">*</span></label>
+                <input type="text" name="college_department" />
+              </div>
+
+              <div class="field">
+                <label>Preferred Industry <span class="req">*</span></label>
+                <input type="text" name="preferred_industry" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Job Role Interested In <span class="req">*</span></label>
+              <div class="check-list">
+                <label class="check-item"><input type="checkbox" name="college_job_role[]" value="Production / Manufacturing"> Production / Manufacturing</label>
+                <label class="check-item"><input type="checkbox" name="college_job_role[]" value="Design / R&D"> Design / R&amp;D</label>
+                <label class="check-item"><input type="checkbox" name="college_job_role[]" value="Sales / Marketing / Business Development"> Sales / Marketing / Business Development</label>
+                <label class="check-item"><input type="checkbox" name="college_job_role[]" value="Quality / Inspection"> Quality / Inspection</label>
+                <label class="check-item"><input type="checkbox" name="college_job_role[]" value="Automation / CNC / Robotics"> Automation / CNC / Robotics</label>
+                <label class="check-item"><input type="checkbox" name="college_job_role[]" value="Software / IT / Data"> Software / IT / Data</label>
+                <label class="check-item"><input type="checkbox" name="college_job_role[]" value="Maintenance / Service"> Maintenance / Service</label>
+                <label class="check-item"><input type="checkbox" name="college_job_role[]" value="Accounts / HR / Administration"> Accounts / HR / Administration</label>
+
+                <div class="check-item other-line">
+                  <label class="check-item" style="margin:0;">
+                    <input type="checkbox" id="collegeJobOtherChk">
+                    Other:
+                  </label>
+                  <input type="text" name="college_job_role_other" id="collegeJobOtherInput" disabled />
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Remarks/ Expectations</label>
+              <textarea name="college_remarks"></textarea>
+            </div>
+          </div>
+
+          <!-- ACTIONS -->
+          <div class="actions">
+            <button type="submit" class="btn">Submit</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+ <section class="sponsor-banner">
+
+    <div class="sponsor-banner__container">
+
+      <div class="sponsor-banner__item">
+        <img src="images/imtoflogo.png" alt="IMTOF Logo">
+      </div>
+
+      <div class="sponsor-banner__item">
+        <img src="images/hsglogo.png" alt="HSG Logo">
+      </div>
+
+      <div class="sponsor-banner__item">
+        <img src="images/imtof2026goldsponsorlogos.png" alt="Platinum Sponsors">
+      </div>
+
+      <div class="sponsor-banner__group--silver">
+        <div class="sponsor-banner__item"><img src="images/yizumi.png"></div>
+        <div class="sponsor-banner__item"><img src="images/appl.png"></div>
+        <div class="sponsor-banner__item"><img src="images/krykard.png"></div>
+        <div class="sponsor-banner__item"><img src="images/steellink.png"></div>
+        <div class="sponsor-banner__item"><img src="images/api.png"></div>
+        <div class="sponsor-banner__item"><img src="images/komter.png"></div>
+      </div>
+
+      <div class="sponsor-banner__item">
+        <img src="images/mmtmalogo.png" alt="MMTS Logo">
+      </div>
+
+      <div class="sponsor-banner__item">
+        <img src="images/ippexlogo.png" alt="IPPEX Logo">
+      </div>
+
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
